@@ -220,4 +220,51 @@
   }
   window.addEventListener("load", navmenuScrollspy);
   document.addEventListener("scroll", navmenuScrollspy);
+
+
+
+  /* all new code adding herer ------ */
+
+  
+const swiperHero = new Swiper('.swiper-hero',{
+  direction:'horizontal',
+  loop:true,
+  autoplay: {
+    delay: 3000, // Delay between slides (in milliseconds)
+    disableOnInteraction: false, // Autoplay continues after user interaction
+  },
+})
+
+
+
+// Add hover event listeners to pause and resume autoplay
+const swiperContainer = document.querySelector('.swiper-hero');
+
+swiperContainer.addEventListener('mouseenter', () => {
+  swiperHero.autoplay.stop();
+});
+
+swiperContainer.addEventListener('mouseleave', () => {
+  swiperHero.autoplay.start();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 })();
