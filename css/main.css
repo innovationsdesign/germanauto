@@ -50,6 +50,14 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
+
+.heading {
+  font-family: "Oswald", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
 body {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -720,7 +728,7 @@ section,
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  background: color-mix(in srgb, var(--background-color), transparent 70%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -1766,42 +1774,33 @@ section,
   /* Add your styles here */
 }
 
-
-
-
 /*====== swiper hero info ==== */
-.swiper-hero{
-  width:100%;
-  height:100vh;
-  position:relative;
-  top:30px;
-  padding:0px;
+.swiper-hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  top: 30px;
+  padding: 0px;
 }
 
-
-
-.swiper-hero .swiper-wrapper{
-  width:100%;
-  height:100%;
+.swiper-hero .swiper-wrapper {
+  width: 100%;
+  height: 100%;
 }
 
-.swiper-hero .swiper-wrapper .swiper-slide img{
- display:block;
- object-fit: cover;
- width:100%;
- height:100%;
- overflow:hidden;
+.swiper-hero .swiper-wrapper .swiper-slide img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-
-.main-box{
+.main-box {
   position: relative;
   overflow: hidden;
   z-index: 1;
-
 }
-
-
 
 .main-box {
   position: relative;
@@ -1845,13 +1844,94 @@ section,
   z-index: 2;
 }
 
-
-
 .swiper-wrapper .container {
   position: absolute;
   z-index: 3;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   /* transition: unset; */
+}
+
+//featured cards
+.featured-card-wrapper {
+  width: 500px;
+  height: 300px;
+  position: relative;
+  perspective: 1300px;
+}
+
+.card-inner-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.featured-card-wrapper:hover .card-inner-wrapper {
+  transform: rotateY(180deg);
+}
+
+.card-new-item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 5px;
+}
+
+.card-front {
+  color: #fff;
+  position: relative;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.card-front::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 200px;
+  height: 2px;
+  background: #fff;
+  top: 40px;
+  left: 40px;
+}
+
+.card-front::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+}
+
+.card-back {
+  background: linear-gradient(45deg, #000, red, #000);
+  color: #fff;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  width: 100%;
+  height: 100%;
+}
+
+section.featured-new-section {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 30px;
+  border: 1px solid red;
 }
