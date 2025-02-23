@@ -240,14 +240,64 @@ const swiperHero = new Swiper('.swiper-hero',{
 // Add hover event listeners to pause and resume autoplay
 const swiperContainer = document.querySelector('.swiper-hero');
 
-swiperContainer.addEventListener('mouseenter', () => {
-  swiperHero.autoplay.stop();
-});
+if(swiperContainer){
+  swiperContainer.addEventListener('mouseenter', () => {
+    swiperHero.autoplay.stop();
+  });
+  
+  swiperContainer.addEventListener('mouseleave', () => {
+    swiperHero.autoplay.start();
+  });
 
-swiperContainer.addEventListener('mouseleave', () => {
-  swiperHero.autoplay.start();
-});
+}
 
+
+
+
+//dealing with the service tab
+
+const getAllServiceType = document.querySelectorAll('.service-type');
+const getAllServiceDetail = document.querySelectorAll('.service-detail');
+
+if(document.querySelector('#service-details')){
+  getAllServiceType.forEach(function(type){
+
+    type.addEventListener('click', function(event){
+      let getDataCategory = event.currentTarget.getAttribute('data-category');
+      console.log(getDataCategory);
+
+      //check if current even contains class active if not add it else remove
+      // Remove 'active' class from all elements
+      getAllServiceType.forEach(el => el.classList.remove('active'));
+
+      // Add 'active' class to the clicked element
+      event.currentTarget.classList.add('active');
+
+
+      //now loop through the details and get the detail that matches the type category
+      getAllServiceDetail.forEach(function(info){
+        const getServiceDetailData = info.getAttribute('data-detail');
+        console.log(getAllServiceDetail);
+
+
+        //compare
+        if(getDataCategory === getServiceDetailData){
+
+          //remove hide info
+          info.classList.remove('hide-service');
+          //add the classto the element
+          info.classList.add('show-service');
+          //info.classList.add('active')
+        }else{
+          info.classList.remove('show-service');
+          info.classList.add('hide-service');
+         // info.classList.remove('active')
+        }
+      })
+    })
+
+  })
+}
 
 
 

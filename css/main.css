@@ -12,7 +12,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #555555; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #0e363e; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #199eb8; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color:red; /* #199eb8;*/ /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -1281,7 +1281,7 @@ section,
   padding: 20px 15px;
   font-size: 16px;
   font-weight: 600;
-  color: #fff; //color-mix(in srgb, var(--default-color), transparent 20%);
+  color: #fff; /*color-mix(in srgb, var(--default-color), transparent 20%);*/
   background: red; /*color-mix(in srgb, var(--default-color), transparent 95%);*/
 }
 
@@ -1357,7 +1357,7 @@ section,
 }
 
 .pricing .advanced {
-  background: var(--accent-color);
+  background: #000;
   color: var(--contrast-color);
   width: 200px;
   position: absolute;
@@ -2070,4 +2070,141 @@ a.square-cta.learn:hover::after {
     min-height: 50vh;
     height: 50vh;
   }
+}
+
+
+
+.swiper-slide img{
+  display:block;
+  object-fit:cover;
+  object-position:center center;
+  width:100%;
+  overflow:hiddden;
+}
+
+
+
+
+/* codefor service tab page*/
+.hide-service{
+  display:none;
+}
+
+
+.show-service{
+  display:block;
+}
+
+
+span.bold-intro {
+  font-weight: 700;
+}
+
+
+.service-detail h4{
+  font-weight:700;
+  font-size:20px;
+  padding-bottom:20px;
+}
+
+
+.service-detail section{
+  padding:20px 0px;
+}
+
+ul.services-ul {
+  list-style: disc;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+ul.services-ul li {
+  list-style: disc;
+}
+
+ul.services-ul li::before {
+  content: '-';
+  padding: 5px;
+
+}
+
+
+.why-choose-us {
+  max-width: 1320;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*what set us a apart*/
+
+ul.choose-us.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  grid-template-rows: auto;
+  max-width: 1320px;
+  margin: 0 auto;
+  list-style: none
+}
+
+
+@media (max-width:768px){
+  ul.choose-us.section {
+      grid-template-columns:1fr;
+      max-width:100%;
+      width:calc(100% - 30px);
+      margin:0 15px;
+  }
+}
+
+
+/* map */
+section.map {
+  padding-bottom: 0px;
+}
+
+
+/* style about image */
+.col-lg-5 img {
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/*gallery masorny */
+.gallery-masonry{
+  width:min(1320px, 100%);
+  margin:0 auto;
+  columns:3 300px;
+  column-gap: 10px;
+}
+
+
+.gallery-masonry img{
+  display:block;
+  object-fit: cover;
+  object-position: center center;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  margin-bottom:10px;
+}
+
+
+figcaption{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:min(800px, 100%);
+  margin:0 auto;
+  z-index:999;
 }
