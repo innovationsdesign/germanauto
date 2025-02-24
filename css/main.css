@@ -1874,11 +1874,32 @@ section,
   gap: 30px;
 }
 
+@media (max-width:1310px){
+  .featured-new-section {
+      max-width:100%;
+      width:calc(100% - 30px);
+      overflow:hidden;
+
+  }
+
+}
+
 .featured-card-wrapper {
   width: 648px;
   height: 300px;
   position: relative;
   perspective: 1300px;
+}
+
+
+@media (max-width:1310px){
+  .featured-card-wrapper {
+      max-width:100%;
+      width:100%;
+      overflow:hidden;
+
+  }
+
 }
 
 .card-inner-wrapper {
@@ -2131,13 +2152,23 @@ ul.services-ul li::before {
 
 
 .why-choose-us {
-  max-width: 1320;
+ width:100%;
   max-width: 1320px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+
+@media (max-width:1310px){
+  .why-choose-us{
+      max-width:100%;
+      padding-top:20px;
+
+  }
+
 }
 
 /*what set us a apart*/
@@ -2148,8 +2179,19 @@ ul.choose-us.section {
   gap: 40px;
   grid-template-rows: auto;
   max-width: 1320px;
+  width:100%;
   margin: 0 auto;
   list-style: none
+}
+
+@media (max-width:1310px){
+  ul.choose-us.section  {
+      max-width:100%;
+      width:calc(100% - 30px);
+      overflow:hidden;
+
+  }
+
 }
 
 
