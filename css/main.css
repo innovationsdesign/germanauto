@@ -752,8 +752,9 @@ section,
   display: flex;
   justify-content: center;
   align-items: center;
-  white-space: nowrap;
+  /*white-space: nowrap;*/
   letter-spacing: 1px;
+  text-align:center;
 }
 
 .hero p {
@@ -2207,4 +2208,7 @@ figcaption{
   width:min(800px, 100%);
   margin:0 auto;
   z-index:999;
+  background:rgba(0,0,0,0.5);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
 }
